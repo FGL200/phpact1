@@ -1,1 +1,3 @@
-console.log("test");
+function goHome(){
+    window.location.href = "../";
+}
