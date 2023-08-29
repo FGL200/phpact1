@@ -42,6 +42,7 @@ body > div,
 body > form {
     background-color: white;
     padding: 1rem;
-    border-top: 10px solid #222;
-    border-bottom: 10px solid #222;
+    border-top: 10px solid #3498DB;
+    border-bottom: 10px solid #3498DB;
+    border-radius: 10px;
 }

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/main.js"></script>
     <style>
         div {
             display: flex;
@@ -13,18 +14,33 @@
         div > a {
             margin: .25rem 0;
         }
+        div > span > button {
+            text-align: center;
+            padding: .25rem 1rem;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
     <div>
-        <h1>Go to</h1>
-        <a href="./pages/add_supplier.html">Add Supplier</a>
-        <a href="./pages/add_ingredients.html">Add Ingredients</a>
-        <a href="./pages/add_items.html">Add Items</a>
-        <a href="./pages/add_meals.html">Add Meals</a>
-        <a href="./pages/add_menuItems.html">Add Menu Items</a>
-        <a href="./pages/add_partOf.html">Add Part Of</a>
-        <a href="./pages/add_madeWith.html">Add Made With</a>
+        <h1>CRUD's ACTIVITY</h1> 
+    </div>
+    <div style="flex-direction: row; align-items: center; gap: 10px;">
+        <span>
+            <label for="goto"><b>Action</b></label>
+            <select id="goto">
+                <option value="./pages/add_supplier.html">Add Supplier</option>
+                <option value="./pages/add_ingredients.html">Add Ingredients</option>
+                <option value="./pages/add_items.html">Add Items</option>
+                <option value="./pages/add_meals.html">Add Meals</option>
+                <option value="./pages/add_menuItems.html">Add Menu Items</option>
+                <option value="./pages/add_partOf.html">Add Part Of</option>
+                <option value="./pages/add_madeWith.html">Add Made With</option>
+            </select>
+        </span>
+        <span>
+            <button type="button" onclick="goTo()">Go</button>
+        </span>
     </div>
 </body>
 </html>
