@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Supplier</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <form action="../php/add_supplier.php" method="POST" id="add-supplier">
+            <span>
+                <h1>Add Supplier</h1>
+            </span>
+            <span>
+                <label for="company_name">Company Name</label>
+                <input type="text" name="company_name" id="company_name">
+            </span>
+            <span>
+                <label for="rep_fname">Representative's Firstname</label>
+                <input type="text" name="rep_fname" id="rep_fname">
+            </span>
+            <span>
+                <label for="rep_lname">Representative's Lastname</label>
+                <input type="text" name="rep_lname" id="rep_lname">
+            </span>
+            <span>
+                <label for="referred_by">Referred by</label>
+                <input type="text" name="referred_by" id="referred_by">
+            </span>
+            <span>
+                <button type="submit">Add</button>
+            </span>
+        </form>
+</body>
+</html>
