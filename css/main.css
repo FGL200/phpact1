@@ -26,7 +26,10 @@ form > span {
     justify-content: space-between;
     gap: 10px;
 }
-
+form > span > select,
+form > span > input[type="text"]{
+    width: 40%;
+}
 form > span > h1 {
     width: 100%;
     text-align: center;
