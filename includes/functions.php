@@ -11,7 +11,7 @@ function redirect($con, $query) {
 }
 
 function get_last_id($con, $table, $column, $order) {
-    return $con->query("SELECT $column FROM $table ORDER BY $column $order")->fetch_array();
+    return $con->query("SELECT $column FROM $table ORDER BY $column $order LIMIT 1")->fetch_array();
 }
 
 function get_all_ids($con, $table, $column) {
