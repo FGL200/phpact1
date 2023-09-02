@@ -39,6 +39,7 @@ main {
 .flex-rr{display: flex; flex-direction: row-reverse;}
 .flex-c{display: flex; flex-direction: column;}
 .flex-cr{display: flex; flex-direction: column-reverse;}
+.flex-wrap{flex-wrap: wrap;}
 .flex-grow{flex-grow: 1;}
 .flex-shirk{flex-shrink: 1;}
 .justify-c-center{justify-content: center;}
@@ -154,11 +155,11 @@ main {
 .text-n{text-decoration: none;}
 
 
-.g-1{gap    : .5rem}
-.g-2{gap    : .75rem}
-.g-3{gap    : 1.5rem}
-.g-4{gap    : 2.25rem;}
-.g-5{gap    : 3rem;}
+.g-1{gap: .5rem}
+.g-2{gap: .75rem}
+.g-3{gap: 1.5rem}
+.g-4{gap: 2.25rem;}
+.g-5{gap: 3rem;}
 
 .p-1{padding: .25rem}
 .p-2{padding: .75rem}
