@@ -5,40 +5,46 @@
     $current_added_id  = get_last_id($con, "items", "itemid", "DESC");
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Supplier</title>
-    <link rel="stylesheet" href="../css/main.css">
-    <script src="../js/main.js"></script>
-</head>
-<body>
-    <form action="../php/add_items.php" method="POST" id="add-supplier">
-            <span>
-                <h1>Add Items</h1>
-            </span>
-            <span>
-                <label for="id">ID</label>
-                <input type="text" name="id" id="id" value="<?= str_pad($current_added_id ? $current_added_id[0] + 1 : 1, 5, '0', STR_PAD_LEFT) ;?>"  readonly>
-            </span>
-            <span>
-                <label for="name">Name</label>
-                <input type="text" name="name" id="name">
-            </span>
-            <span>
-                <label for="price">Price</label>
-                <input type="text" name="price" id="price">
-            </span>
-            <span>
-                <label for="date_added">Date Added</label>
-                <input type="date" name="date_added" id="date_added">
-            </span>
-            <span>
-                <button type="button" onclick="goHome()" >Back</button>
-                <button type="submit">Add</button>
-            </span>
-        </form>
-</body>
-</html>
+<?php
+    require_once "../includes/header.php";
+    require_once "../includes/footer.php";
+?>
+
+<?php 
+    $header['css'] = ['main', 'index'];
+    $header['title'] = 'Home';
+    includeHeader($header);
+?>
+
+<main class="flex-c flex-grow justify-c-center align-i-center m-5">
+    <form action="../php/add_items.php" method="POST" id="add-supplier" class="card p-3 shadow-m flex-c g-1">
+        <span class="flex-r justify-c-space-between g-3">
+            <b class="font-l">New Item</b>
+        </span>
+        <span class="flex-r justify-c-space-between g-3">
+            <label class="font-xs" for="id">ID</label>
+            <input class="p-1 font-xs" type="text" name="id" id="id" value="<?= str_pad($current_added_id ? $current_added_id[0] + 1 : 1, 5, '0', STR_PAD_LEFT) ;?>"  readonly>
+        </span>
+        <span class="flex-r justify-c-space-between g-3">
+            <label class="font-xs" for="name">Item's Name</label>
+            <input class="p-1 font-xs" type="text" name="name" id="name">
+        </span>
+        <span class="flex-r justify-c-space-between g-3">
+            <label class="font-xs" for="price">Price</label>
+            <input class="p-1 font-xs" type="text" name="price" id="price">
+        </span>
+        <span class="flex-r justify-c-space-between g-3">
+            <label class="font-xs" for="date_added">Date Added</label>
+            <input class="p-1 font-xs" type="date" name="date_added" id="date_added">
+        </span>
+        <span class="flex-rr justify-c-space-between g-3">
+            <button class="btn btn-red font-xs" type="submit">Add</button>
+            <button class="btn font-xs" type="button" onclick="goHome()" >Back</button>
+        </span>
+    </form>
+</main>
+
+<?php 
+    $footer['js'] = ['main'];
+    includeFooter($footer);
+?>

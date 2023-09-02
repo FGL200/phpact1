@@ -4,55 +4,53 @@
     // fetch all id's of suppliers
     $ids = get_all_ids($con, "suppliers", "supplierid");
 
-
     // current added supplierid
     $current_added_id  = get_last_id($con, "ingredients", "ingredientid", "DESC");
 ?>
 
+<?php
+    require_once "../includes/header.php";
+    require_once "../includes/footer.php";
+?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Supplier</title>
-    <link rel="stylesheet" href="../css/main.css">
-    <script src="../js/main.js"></script>
-</head>
-<body>
-    <form action="../php/add_ingredients.php" method="POST" id="add-ingredients">
-        <span>
-            <h1>Add Ingredients</h1>
-        </span>
+<?php 
+    $header['css'] = ['main', 'index'];
+    $header['title'] = 'Home';
+    includeHeader($header);
+?>
 
-        <span>
-            <label for="id">ID</label>
-            <input type="text" name="id" id="id" value="<?= str_pad($current_added_id ? $current_added_id[0] + 1 : 1, 5, '0', STR_PAD_LEFT) ;?>"  readonly>
+<main class="flex-c flex-grow justify-c-center align-i-center m-5">
+    <form action="../php/add_ingredients.php" method="POST" id="add-ingredients" class="card p-3 shadow-m flex-c g-1">
+        <span class="flex-r justify-c-space-between g-3">
+            <b class="font-l">New Ingredient</b>
         </span>
-
-        <span>
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name">
+        <span class="flex-r justify-c-space-between g-3">
+            <label class="font-xs" for="id">ID</label>
+            <input class="p-1 font-xs" type="text" name="id" id="id" value="<?= str_pad($current_added_id ? $current_added_id[0] + 1 : 1, 5, '0', STR_PAD_LEFT) ;?>"  readonly>
         </span>
-        <span>
-            <label for="unit">Unit</label>
-            <input type="text" name="unit" id="unit">
+        <span class="flex-r justify-c-space-between g-3">
+            <label class="font-xs" for="name">Ingredient's Name</label>
+            <input class="p-1 font-xs" type="text" name="name" id="name">
         </span>
-        <span>
-            <label for="unitprice">Unit Price</label>
-            <input type="text" name="unitprice" id="unitprice">
+        <span class="flex-r justify-c-space-between g-3">
+            <label class="font-xs" for="unit">Unit</label>
+            <input class="p-1 font-xs" type="text" name="unit" id="unit">
         </span>
-        <span>
-            <label for="foodgroup">Food Group</label>
-            <input type="text" name="foodgroup" id="foodgroup">
+        <span class="flex-r justify-c-space-between g-3">
+            <label class="font-xs" for="unitprice">Unit Price</label>
+            <input class="p-1 font-xs" type="text" name="unitprice" id="unitprice">
         </span>
-        <span>
-            <label for="inventory">Inventory</label>
-            <input type="text" name="inventory" id="inventory">
+        <span class="flex-r justify-c-space-between g-3">
+            <label class="font-xs" for="foodgroup">Food Group</label>
+            <input class="p-1 font-xs" type="text" name="foodgroup" id="foodgroup">
         </span>
-        <span>
-            <label for="supplier_id">Supplier ID</label>
-            <select id="supplier_id" name="supplier_id">
+        <span class="flex-r justify-c-space-between g-3">
+            <label class="font-xs" for="inventory">Inventory</label>
+            <input class="p-1 font-xs" type="text" name="inventory" id="inventory">
+        </span>
+        <span class="flex-r justify-c-space-between g-3">
+            <label class="font-xs" for="supplier_id">Ingredient's Supplier ID</label>
+            <select class="p-1 font-xs" id="supplier_id" name="supplier_id">
                 <option value="" selected>--SELECT--</option>
             <?php
                     while($row = $ids->fetch_assoc()):
@@ -64,10 +62,14 @@
             </select>
                 
         </span>
-        <span>
-            <button type="button" onclick="goHome()" >Back</button>
-            <button type="submit">Add</button>
+        <span class="flex-rr justify-c-space-between g-3">
+            <button class="btn btn-red font-xs" type="submit">Add</button>
+            <button class="btn font-xs" type="button" onclick="goHome()" >Back</button>
         </span>
     </form>
-</body>
-</html>
+</main>
+
+<?php 
+    $footer['js'] = ['main'];
+    includeFooter($footer);
+?>
