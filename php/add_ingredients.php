@@ -1,13 +1,21 @@
 <?php
-require_once ("./congifg.php");
+require_once "config.php";
+
+require_once "../includes/functions.php";
 
 extract($_POST);
 
-$con->query(
-    "
-    INSERT INTO suppliers(`company_name`,`rep_fname`,`rep_lname`,`referred_by`) VALUES
-    ('".$company_name."','".$rep_fname."','".$rep_lname."','".$referred_by."')
-    "
-);
+$query = "INSERT INTO ingredients(`ingredientid`, `name`,`unit`,`unitprice`,`foodgroup`,`inventory`) VALUES
+( '".$id."', '".$name."','".$unit."','".$unitprice."','".$foodgroup."', '".$inventory."')";
+
+if($supplier_id) {
+    $query = "INSERT INTO ingredients(`ingredientid`, `name`,`unit`,`unitprice`,`foodgroup`,`inventory`,`supplierid`) VALUES
+    ( '".$id."', '".$name."','".$unit."','".$unitprice."','".$foodgroup."', '".$inventory."','".$supplier_id."')";
+}
+
+redirect($con, $query);
+
+
+
 
 ?>

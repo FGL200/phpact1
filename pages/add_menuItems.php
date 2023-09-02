@@ -1,3 +1,10 @@
+<?php
+    require_once("../php/config.php");
+    require_once("../includes/functions.php");
+
+    $current_added_id  = get_last_id($con, "menuitems", "menuitemid", "DESC");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,9 +15,13 @@
     <script src="../js/main.js"></script>
 </head>
 <body>
-    <form action="" method="POST" id="add-supplier">
+    <form action="../php/add_menuItems.php" method="POST" id="add-supplier">
             <span>
-                <h1>Add Items</h1>
+                <h1>Add Menu Item</h1>
+            </span>
+            <span>
+                <label for="id">ID</label>
+                <input type="text" name="id" id="id" value="<?= str_pad($current_added_id ? $current_added_id[0] + 1 : 1, 5, '0', STR_PAD_LEFT) ;?>"  readonly>
             </span>
             <span>
                 <label for="name">Name</label>
@@ -19,10 +30,6 @@
             <span>
                 <label for="price">Price</label>
                 <input type="text" name="price" id="price">
-            </span>
-            <span>
-                <label for="date_added">Date Added</label>
-                <input type="date" name="date_added" id="date_added">
             </span>
             <span>
                 <button type="button" onclick="goHome()" >Back</button>

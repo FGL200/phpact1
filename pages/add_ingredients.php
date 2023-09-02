@@ -1,3 +1,15 @@
+<?php
+    require_once("../php/config.php");
+    require_once("../includes/functions.php");
+    // fetch all id's of suppliers
+    $ids = get_all_ids($con, "suppliers", "supplierid");
+
+
+    // current added supplierid
+    $current_added_id  = get_last_id($con, "ingredients", "ingredientid", "DESC");
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,10 +20,16 @@
     <script src="../js/main.js"></script>
 </head>
 <body>
-    <form action="" method="POST" id="add-ingredients">
+    <form action="../php/add_ingredients.php" method="POST" id="add-ingredients">
         <span>
             <h1>Add Ingredients</h1>
         </span>
+
+        <span>
+            <label for="id">ID</label>
+            <input type="text" name="id" id="id" value="<?= str_pad($current_added_id ? $current_added_id[0] + 1 : 1, 5, '0', STR_PAD_LEFT) ;?>"  readonly>
+        </span>
+
         <span>
             <label for="name">Name</label>
             <input type="text" name="name" id="name">
@@ -33,8 +51,18 @@
             <input type="text" name="inventory" id="inventory">
         </span>
         <span>
-            <label for="supplierid">Supplier ID</label>
-            <input type="text" name="supplierid" id="supplierid">
+            <label for="supplier_id">Supplier ID</label>
+            <select id="supplier_id" name="supplier_id">
+                <option value="" selected>--SELECT--</option>
+            <?php
+                    while($row = $ids->fetch_assoc()):
+            ?>
+                    <option value="<?=$row['supplierid'];?>"><?=$row['supplierid'];?></option>
+            <?php
+                    endwhile;
+                ?>
+            </select>
+                
         </span>
         <span>
             <button type="button" onclick="goHome()" >Back</button>

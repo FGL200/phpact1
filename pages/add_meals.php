@@ -1,3 +1,10 @@
+
+<?php
+    require_once("../php/config.php");
+    require_once("../includes/functions.php");
+
+    $current_added_id  = get_last_id($con, "meals", "mealid", "DESC");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,13 +15,13 @@
     <script src="../js/main.js"></script>
 </head>
 <body>
-    <form action="" method="POST" id="add-ingredients">
+    <form action="../php/add_meals.php" method="POST" id="add-ingredients">
         <span>
             <h1>Meals</h1>
         </span>
         <span>
-            <label for="meadId">Meal ID</label>
-            <input type="text" name="meadId" id="meadId">
+            <label for="id">ID</label>
+            <input type="text" name="id" id="id" value="<?= str_pad($current_added_id ? $current_added_id[0] + 1 : 1, 5, '0', STR_PAD_LEFT) ;?>"  readonly>
         </span>
         <span>
             <label for="name">Name</label>
