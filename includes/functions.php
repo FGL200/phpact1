@@ -25,7 +25,7 @@ function get_all_ids($con, $table, $column) {
   $results =  $con->query($query);
    while($column = $results->fetch_assoc()) {
 ?>
-    <option value="<?=$column[$clmnname];?>_<?=$column['name'];?>"><?=$column['name'];?></option>
+    <option value="<?=$column[$clmnname];?>_<?=implode('', explode(' ', $column['name']));?>"><?=$column['name'];?></option>
 
 <?php
    }
