@@ -31,12 +31,18 @@ function addMeal(e){
     quantity.setAttribute("class", "font-xs");
     quantity.setAttribute("style", "border: none; outline: none; border-left: 1px solid rgba(0,0,0,0.2); padding-left: .5rem; background: rgba(0,0,0,0.1);");
     quantity.setAttribute("type", "number");
+<<<<<<< HEAD
     quantity.setAttribute("name", "quantity_" + id)
+=======
+>>>>>>> 0ee10206961483883c5dfee5015293860db132d0
     quantity.setAttribute("value", "1");
     quantity.setAttribute("min", "0");
     quantity.setAttribute("max", "10");
 
+<<<<<<< HEAD
     meal.append(meal_input);
+=======
+>>>>>>> 0ee10206961483883c5dfee5015293860db132d0
     meal.appendChild(quantity);
     meal.appendChild(close);
 
