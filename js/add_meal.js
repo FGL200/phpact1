@@ -1,6 +1,4 @@
-document.getElementById("date_added").value = MAIN.ToInputDate(new Date());
-
-function addItem(e){
+function addMeal(e){
     const value = String(e.value);
     const id = value.split("_")[0];
     const name = value.split("_")[1];
@@ -11,17 +9,17 @@ function addItem(e){
 
     e.children[0].selected = true;
 
-    const item = document.createElement('p');
-    item.setAttribute("class", "card item-ingredient p-1 font-xs flex-r align-i-center g-1");
-    item.setAttribute("data-id", id);
-    item.innerHTML = name;
+    const meal = document.createElement('p');
+    meal.setAttribute("class", "card meal-item p-1 font-xs flex-r align-i-center g-1");
+    meal.setAttribute("data-id", id);
+    meal.innerHTML = name;
 
     const close = document.createElement("button");
     close.setAttribute("class", "btn flex-r font-xs justify-c-center align-c-center");
     close.setAttribute("style", "padding: 0; width: 20px; height: 20px; border-radius: 50%; border: none; font-size: 10px;")
     close.innerHTML = '_';
     close.addEventListener("click", function() {
-        item.remove();
+        meal.remove();
     });
 
     const quantity = document.createElement("input");
@@ -32,15 +30,15 @@ function addItem(e){
     quantity.setAttribute("min", "0");
     quantity.setAttribute("max", "10");
 
-    item.appendChild(quantity);
-    item.appendChild(close);
+    meal.appendChild(quantity);
+    meal.appendChild(close);
 
-    const itemsHolder = document.getElementById("items-holder");
+    const mealsHolder = document.getElementById("meals-holder");
     let copy = 0;
-    for(let i = 0; i < itemsHolder.children.length; i ++){
-        if(itemsHolder.children[i].getAttribute('data-id') == id) copy++;
+    for(let i = 0; i < mealsHolder.children.length; i ++){
+        if(mealsHolder.children[i].getAttribute('data-id') == id) copy++;
     }
     if(copy == 0){
-        itemsHolder.appendChild(item);
+        mealsHolder.appendChild(meal);
     }
 }

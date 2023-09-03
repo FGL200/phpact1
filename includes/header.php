@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="<?="../css/$c";?>.css">
     <?php }?>
 </head>
-<body class="flex-c b-color-w">
+<body class="flex-c" style="background-color: #FDF2E9;">
 <header class="text-c color-w p-1">
     <a href="../" class="font-b flex-r align-i-center justify-c-center color-w text-n">
         <p class="font-l">C</p>
