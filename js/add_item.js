@@ -29,6 +29,11 @@ function addItem(e){
     item.setAttribute("data-id", id);
     item.innerHTML = name;
 
+    const item_input = document.createElement("input");
+    item_input.setAttribute("type", "hidden");
+    item_input.setAttribute("name", "ingredientid[]");
+    item_input.value = id;
+
     const close = document.createElement("button");
     close.setAttribute("class", "btn flex-r font-xs justify-c-center align-c-center");
     close.setAttribute("style", "padding: 0; width: 20px; height: 20px; border-radius: 50%; border: none; font-size: 10px;")
@@ -41,10 +46,12 @@ function addItem(e){
     quantity.setAttribute("class", "font-xs");
     quantity.setAttribute("style", "border: none; outline: none; border-left: 1px solid rgba(0,0,0,0.2); padding-left: .5rem; background: rgba(0,0,0,0.1);");
     quantity.setAttribute("type", "number");
+    quantity.setAttribute("name", "quantity_" + id);
     quantity.setAttribute("value", "0");
     quantity.setAttribute("min", "0");
     quantity.setAttribute("max", "10");
 
+    item.append(item_input);
     item.appendChild(quantity);
     item.appendChild(close);
 

@@ -42,10 +42,8 @@
         </span>
         <select onchange="addItem(this)" id="id-item-list" class="p-1 font-xs">
             <option value="" selected disabled>--Select Ingredient--</option>
-            <option value="1_IngredientOne">Ingredient 1</option>
-            <option value="2_IngredientTwo">Ingredient 2</option>
-            <option value="3_IngredientThree">Ingredient 3</option>
-            <option value="4_IngredientFour">Ingredient 4</option>
+            <?php get_all_ingredients_or_items($con, 'ingredients', 'ingredientid', 'ingredient') ?>
+            
             <!-- YUNG VALUE NG KADA OPTION AY ITEM galing sa database -->
             <!-- structure ng value ('id_IngredientName') OR ('$id' + '_' + '$ingredient')-->
         </select>
