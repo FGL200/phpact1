@@ -18,8 +18,10 @@
     <?php }?>
 </head>
 <body class="flex-c b-color-w">
-<header class="text-c color-w p-1 font-b flex-r align-i-center justify-c-center">
-    <p class="font-l">C</p>
-    <p class="font-s">RUD's</p>
+<header class="text-c color-w p-1">
+    <a href="../" class="font-b flex-r align-i-center justify-c-center color-w text-n">
+        <p class="font-l">C</p>
+        <p class="font-s">RUD's</p>
+    </a>
 </header>
 <?php }?>

@@ -17,7 +17,7 @@
 ?>
 
 <main class="flex-c flex-grow justify-c-center align-i-center m-5">
-    <form action="../php/add_items.php" method="POST" id="add-supplier" class="card p-3 shadow-m flex-c g-1">
+    <form action="../php/add_items.php" method="POST" id="add-supplier" class="card p-3 shadow-m flex-c g-1" style="max-width: 380px;">
         <span class="flex-r justify-c-space-between g-3">
             <b class="font-l">New Item</b>
         </span>
@@ -37,6 +37,18 @@
             <label class="font-xs" for="date_added">Date Added</label>
             <input class="p-1 font-xs" type="date" name="date_added" id="date_added">
         </span>
+        <span id="items-holder" class="flex-r p-1 flex-wrap g-1">
+            
+        </span>
+        <select onchange="addItem(this)" id="id-item-list" class="p-1 font-xs">
+            <option value="" selected disabled>--Select Ingredient--</option>
+            <option value="1_IngredientOne">Ingredient 1</option>
+            <option value="2_IngredientTwo">Ingredient 2</option>
+            <option value="3_IngredientThree">Ingredient 3</option>
+            <option value="4_IngredientFour">Ingredient 4</option>
+            <!-- YUNG VALUE NG KADA OPTION AY ITEM galing sa database -->
+            <!-- structure ng value ('id_IngredientName') OR ('$id' + '_' + '$ingredient')-->
+        </select>
         <span class="flex-rr justify-c-space-between g-3">
             <button class="btn btn-red font-xs" type="submit">Add</button>
             <button class="btn font-xs" type="button" onclick="goHome()" >Back</button>
@@ -45,6 +57,6 @@
 </main>
 
 <?php 
-    $footer['js'] = ['main'];
+    $footer['js'] = ['main', 'add_item'];
     includeFooter($footer);
 ?>

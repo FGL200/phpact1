@@ -10,7 +10,7 @@
 ?>
 
 <main class="flex-c flex-grow justify-c-center align-i-center m-5">
-    <div class="flex-r align-i-center g-5">
+    <div class="flex-r align-i-center justify-c-center g-5 flex-wrap">
         <div class="flex-c">
             <section>
                 <h1 class="font-xl">Activity No. 1</h1>
@@ -25,14 +25,14 @@
                 <p class="font-xs">Choose an action below to proceed</p>
             </label>
             <select class="font-xs p-1" id="goto">
-                <option value="./display_items.php" selected>Display Menu</option>
-                <option value="./add_supplier.php">Add a Supplier</option>
-                <option value="./add_ingredients.php">Add new Ingredient</option>
-                <option value="./add_items.php">Add new Item</option>
-                <option value="./add_meals.php">Add new Meal</option>
-                <!-- <option value="./add_menuItems.php">Add Menu Items</option> -->
-                <!-- <option value="./add_partOf.php">Add Part Of</option> -->
-                <!-- <option value="./add_madeWith.php">Add Made With</option> -->
+                <option value="./display_items" selected>Display Menu</option>
+                <option value="./add_supplier">Add a Supplier</option>
+                <option value="./add_ingredients">Add new Ingredient</option>
+                <option value="./add_items">Add new Item</option>
+                <option value="./add_meals">Add new Meal</option>
+                <!-- <option value="./add_menuItems">Add Menu Items</option> -->
+                <!-- <option value="./add_partOf">Add Part Of</option> -->
+                <!-- <option value="./add_madeWith">Add Made With</option> -->
             </select>
             <span class="flex-rr">
                 <button id="id-btn-go" class="btn btn-red font-xs" type="button" onclick="goTo()">Go</button>
