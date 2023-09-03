@@ -42,7 +42,7 @@
         </span>
         <select onchange="addItem(this)" id="id-item-list" class="p-1 font-xs">
             <option value="" selected disabled>--Select Ingredient--</option>
-            <?php get_all_ingredients_or_items($con, 'ingredients', 'ingredientid', 'ingredient') ?>
+            <?php get_all_ingredients_or_items($con, 'ingredients', 'ingredientid') ?>
             
             <!-- YUNG VALUE NG KADA OPTION AY ITEM galing sa database -->
             <!-- structure ng value ('id_IngredientName') OR ('$id' + '_' + '$ingredient')-->

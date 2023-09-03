@@ -20,7 +20,7 @@ function get_all_ids($con, $table, $column) {
 
 ?>
 
-<?php function get_all_ingredients_or_items($con, $tblname, $clmnname, $id) {
+<?php function get_all_ingredients_or_items($con, $tblname, $clmnname) {
   $query = "SELECT * FROM `$tblname`";
   $results =  $con->query($query);
    while($column = $results->fetch_assoc()) {
