@@ -13,6 +13,12 @@ foreach($ingredientid as $i) {
     VALUES 
     ('$id', '$i', '".$_POST['quantity_'.$i]."');";
 }
+
+$query .= "INSERT INTO menuitems
+        VALUES 
+        ('$id', '$name', $price);
+        ";
+
 redirect($con, $query);
 
 

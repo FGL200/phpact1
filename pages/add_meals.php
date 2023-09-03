@@ -24,7 +24,7 @@
         </span>
         <span class="flex-r justify-c-space-between g-3">
             <label class="font-xs" for="id">ID</label>
-            <input class="p-1 font-xs" type="text" name="id" id="id" value="<?= str_pad($current_added_id ? $current_added_id[0] + 1 : 1, 5, '0', STR_PAD_LEFT) ;?>"  readonly>
+            <input class="p-1 font-xs" type="text" name="id" id="id" value="<?= 'm-'.str_pad($current_added_id ? $current_added_id[0] + 1 : 1, 3, '0', STR_PAD_LEFT) ;?>"  readonly>
         </span>
         <span class="flex-r justify-c-space-between g-3">
             <label class="font-xs" for="name">Meal's Name</label>
