@@ -21,7 +21,7 @@
 
 <main class="flex-c flex-grow justify-c-center align-i-center m-5">
     <form action="../php/add_supplier.php" method="POST" id="add-supplier" class="card p-3 shadow-m flex-c g-1">
-        <span class="flex-r justify-c-space-between g-3">
+        <span class="flex-r justify-c-space-between g3 p-1 m-1 border-b">
             <b class="font-l">New Supplier</b>
         </span>
         <span class="flex-r justify-c-space-between g-3">
@@ -50,7 +50,7 @@
             </select>
         </span>
         <span class="flex-rr justify-c-space-between g-3">
-            <button class="font-xs btn btn-red" type="submit">Add</button>
+            <button class="font-xs btn btn-green" type="submit">Add</button>
             <button class="font-xs btn" type="button" onclick="goHome()" >Back</button>
         </span>
     </form>

@@ -48,7 +48,7 @@
             <input class="p-1 font-xs" type="text" name="description" id="description">
         </span>
         <span class="flex-rr justify-c-space-between g-3">
-            <button class="btn btn-red font-xs" type="submit">Add</button>
+            <button class="btn btn-green font-xs" type="submit">Add</button>
             <button class="btn font-xs" type="button" onclick="goHome()" >Back</button>
         </span>
     </form>

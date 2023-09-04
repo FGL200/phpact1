@@ -51,7 +51,7 @@
         <span class="flex-r justify-c-space-between g-3">
             <label class="font-xs" for="supplier_id">Ingredient's Supplier ID</label>
             <select class="p-1 font-xs" id="supplier_id" name="supplier_id">
-                <option value="" selected>--SELECT--</option>
+                <option value="" selected>--Select Supplier--</option>
             <?php
                     while($row = $ids->fetch_assoc()):
             ?>
@@ -63,7 +63,7 @@
                 
         </span>
         <span class="flex-rr justify-c-space-between g-3">
-            <button class="btn btn-red font-xs" type="submit">Add</button>
+            <button class="btn btn-green font-xs" type="submit">Add</button>
             <button class="btn font-xs" type="button" onclick="goHome()" >Back</button>
         </span>
     </form>

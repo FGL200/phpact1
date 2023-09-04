@@ -34,8 +34,10 @@
                 <!-- <option value="./add_partOf">Add Part Of</option> -->
                 <!-- <option value="./add_madeWith">Add Made With</option> -->
             </select>
-            <span class="flex-rr">
-                <button id="id-btn-go" class="btn btn-red font-xs" type="button" onclick="goTo()">Go</button>
+            <span class="flex-rr justify-c-center ">
+                <button id="id-btn-go" class="btn btn-yellow font-xs" type="button" onclick="goTo()" style="width: 50%;">
+                    Go
+                </button>
             </span>
         </div>
     </div>
