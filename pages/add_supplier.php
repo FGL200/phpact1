@@ -19,28 +19,28 @@
     includeHeader($header);
 ?>
 
-<main class="flex-c flex-grow justify-c-center align-i-center m-5">
+<main class="flex-c flex-grow justify-c-center align-i-center">
     <form action="../php/add_supplier.php" method="POST" id="add-supplier" class="card p-3 shadow-m flex-c g-1">
         <span class="flex-r justify-c-space-between g3 p-1 m-1 border-b">
             <b class="font-l">New Supplier</b>
         </span>
-        <span class="flex-r justify-c-space-between g-3">
+        <!-- <span class="flex-r flex-wrap justify-c-space-between g-3">
             <label class="font-xs" for="id">ID</label>
-            <input class="p-1 font-xs" type="text" name="id" id="id" value="<?= str_pad($current_added_id ? $current_added_id[0] + 1 : 1, 5, '0', STR_PAD_LEFT) ;?>" readonly>
-        </span>
-        <span class="flex-r justify-c-space-between g-3">
+        </span> -->
+        <input type="hidden" name="id" id="id" value="<?= str_pad($current_added_id ? $current_added_id[0] + 1 : 1, 5, '0', STR_PAD_LEFT) ;?>" readonly>
+        <span class="flex-r flex-wrap justify-c-space-between g-1">
             <label class="font-xs" for="company_name">Company Name</label>
             <input class="p-1 font-xs" type="text" name="company_name" id="company_name">
         </span>
-        <span class="flex-r justify-c-space-between g-3">
+        <span class="flex-r flex-wrap justify-c-space-between g-1">
             <label class="font-xs" for="rep_fname">Representative's Firstname</label>
             <input class="p-1 font-xs" type="text" name="rep_fname" id="rep_fname">
         </span>
-        <span class="flex-r justify-c-space-between g-3">
+        <span class="flex-r flex-wrap justify-c-space-between g-1">
             <label class="font-xs" for="rep_lname">Representative's Lastname</label>
             <input class="p-1 font-xs" type="text" name="rep_lname" id="rep_lname">
         </span>
-        <span class="flex-r justify-c-space-between g-3">
+        <span class="flex-r flex-wrap justify-c-space-between g-1">
             <label class="font-xs" for="referred_by">Referred by</label>
             <select class="p-1 font-xs" id="referred_by" name="referred_by">
                 <option value="" selected>--SELECT--</option>

@@ -4,9 +4,9 @@
 
 function redirect($con, $query) {
     if ($con->multi_query($query)){
-        header("Location: ../success.html");
+        header("Location: ..");
     }else{
-        header("Location: ../error.html");
+        echo "ERROR!: ".$query." <br> ".$con;
     }
 }
 

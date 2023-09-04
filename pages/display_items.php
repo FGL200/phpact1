@@ -14,12 +14,12 @@ $menu = get_menu($con);
 ?>
 
 <?php 
-    $header['css'] = ['main', 'index'];
+    $header['css'] = ['main', 'index','display'];
     $header['title'] = 'Home';
     includeHeader($header);
 ?>
 
-<main class="flex-c flex-grow justify-c-center align-i-center m-5">
+<main class="flex-c flex-grow justify-c-center align-i-center">
     <div class="card p-3 shadow-m flex-c g-1">
         <span>
             <b class="font-m">Display Menu</b>
@@ -35,8 +35,8 @@ $menu = get_menu($con);
                     while($row = $menu->fetch_assoc()) {
                 ?>
                 <tr>
-                    <td><?= $row['name'];?></td>
-                    <td><?= $row['price'];?></td>
+                    <td class="text-l"><?= $row['name'];?></td>
+                    <td class="text-r"><?= $row['price'];?></td>
                 </tr>
                 <?php } ?>
 

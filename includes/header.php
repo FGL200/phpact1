@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?=isset($title) ? $title : "Untitled";?></title>
 
+    <link rel="shortcut icon" href="../img/icon.png" type="image/x-icon">
+
     <!-- DEFAULT CSS -->
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/header.css">
@@ -24,4 +26,5 @@
         <p class="font-s">RUD's</p>
     </a>
 </header>
+<div class="flex-grow">
 <?php }?>

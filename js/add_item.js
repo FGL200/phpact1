@@ -24,7 +24,7 @@ function addItem(e){
     const close = document.createElement("button");
     close.setAttribute("class", "btn flex-r font-xs justify-c-center align-c-center");
     close.setAttribute("style", "padding: 0; width: 20px; height: 20px; border-radius: 50%; border: none; font-size: 10px;")
-    close.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+    close.innerHTML = '<b>x</b>';
     close.addEventListener("click", function() {
         item.remove();
     });

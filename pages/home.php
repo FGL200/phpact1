@@ -9,7 +9,7 @@
     includeHeader($header);
 ?>
 
-<main class="flex-c flex-grow justify-c-center align-i-center m-5">
+<main class="flex-c flex-grow justify-c-center align-i-center">
     <div class="flex-r align-i-center justify-c-center g-5 flex-wrap">
         <div class="flex-c">
             <section>

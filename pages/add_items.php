@@ -16,15 +16,15 @@
     includeHeader($header);
 ?>
 
-<main class="flex-c flex-grow justify-c-center align-i-center m-5">
+<main class="flex-c flex-grow justify-c-center align-i-center">
     <form action="../php/add_items.php" method="POST" id="add-supplier" class="card p-3 shadow-m flex-c g-1" style="max-width: 380px;">
         <span class="flex-r justify-c-space-between g-3">
             <b class="font-l">New Item</b>
         </span>
-        <span class="flex-r justify-c-space-between g-3">
+        <!-- <span class="flex-r justify-c-space-between g-3">
             <label class="font-xs" for="id">ID</label>
-            <input class="p-1 font-xs" type="text" name="id" id="id" value="<?= 'i-'.str_pad($current_added_id ? explode('i-', $current_added_id[0])[1] + 1 : 1, 3, '0', STR_PAD_LEFT) ;?>"  readonly>
-        </span>
+        </span> -->
+        <input type="hidden" name="id" id="id" value="<?= 'i-'.str_pad($current_added_id ? explode('i-', $current_added_id[0])[1] + 1 : 1, 3, '0', STR_PAD_LEFT) ;?>"  readonly>
         <span class="flex-r justify-c-space-between g-3">
             <label class="font-xs" for="name">Item's Name</label>
             <input class="p-1 font-xs" type="text" name="name" id="name">

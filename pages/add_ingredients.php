@@ -19,15 +19,15 @@
     includeHeader($header);
 ?>
 
-<main class="flex-c flex-grow justify-c-center align-i-center m-5">
+<main class="flex-c flex-grow justify-c-center align-i-center">
     <form action="../php/add_ingredients.php" method="POST" id="add-ingredients" class="card p-3 shadow-m flex-c g-1">
         <span class="flex-r justify-c-space-between g-3">
             <b class="font-l">New Ingredient</b>
         </span>
-        <span class="flex-r justify-c-space-between g-3">
+        <!-- <span class="flex-r justify-c-space-between g-3">
             <label class="font-xs" for="id">ID</label>
-            <input class="p-1 font-xs" type="text" name="id" id="id" value="<?= str_pad($current_added_id ? $current_added_id[0] + 1 : 1, 5, '0', STR_PAD_LEFT) ;?>"  readonly>
-        </span>
+        </span> -->
+        <input type="hidden" name="id" id="id" value="<?= str_pad($current_added_id ? $current_added_id[0] + 1 : 1, 5, '0', STR_PAD_LEFT) ;?>"  readonly>
         <span class="flex-r justify-c-space-between g-3">
             <label class="font-xs" for="name">Ingredient's Name</label>
             <input class="p-1 font-xs" type="text" name="name" id="name">
@@ -42,14 +42,22 @@
         </span>
         <span class="flex-r justify-c-space-between g-3">
             <label class="font-xs" for="foodgroup">Food Group</label>
-            <input class="p-1 font-xs" type="text" name="foodgroup" id="foodgroup">
+            <select class="p-1 font-xs" name="foodgroup" id="foodgroup">
+                <option value="None" selected disabled>--Select Food Group--</option>
+                <option value="Vegetables/Fruits">Vegetables/Fruits</option>
+                <option value="Grains">Grains</option>
+                <option value="Fat">Fats</option>
+                <option value="Protein">Protein</option>
+                <option value="Dairy">Dairy</option>
+            </select>
+            <!-- <input class="p-1 font-xs" type="text" name="foodgroup" id="foodgroup"> -->
         </span>
         <span class="flex-r justify-c-space-between g-3">
             <label class="font-xs" for="inventory">Inventory</label>
             <input class="p-1 font-xs" type="text" name="inventory" id="inventory">
         </span>
         <span class="flex-r justify-c-space-between g-3">
-            <label class="font-xs" for="supplier_id">Ingredient's Supplier ID</label>
+            <label class="font-xs" for="supplier_id">Ingredient's Supplier</label>
             <select class="p-1 font-xs" id="supplier_id" name="supplier_id">
                 <option value="" selected>--Select Supplier--</option>
             <?php
