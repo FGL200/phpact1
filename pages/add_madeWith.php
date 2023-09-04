@@ -3,9 +3,9 @@
     require_once("../php/config.php");
     require_once("../includes/functions.php");
 
-    $ingredient_ids = get_all_ids($con, "ingredients", "ingredientid");
+    $ingredient_ids = get_all_ids($con, "ingredients");
 
-    $item_ids = get_all_ids($con, "items", "itemid");
+    $item_ids = get_all_ids($con, "items");
 
 ?>
 

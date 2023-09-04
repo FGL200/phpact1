@@ -2,7 +2,7 @@
     require_once("../php/config.php");
     require_once("../includes/functions.php");
     // fetch all id's of suppliers
-    $ids = get_all_ids($con, "suppliers", "supplierid");
+    $ids = get_all_ids($con, "suppliers");
 
     // current added supplierid
     $current_added_id  = get_last_id($con, "ingredients", "ingredientid", "DESC");
@@ -55,7 +55,7 @@
             <?php
                     while($row = $ids->fetch_assoc()):
             ?>
-                    <option value="<?=$row['supplierid'];?>"><?=$row['supplierid'];?></option>
+                    <option value="<?=$row['supplierid'];?>"><?=$row['company_name'];?></option>
             <?php
                     endwhile;
                 ?>
