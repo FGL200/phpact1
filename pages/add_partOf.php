@@ -2,9 +2,9 @@
     require_once("../php/config.php");
     require_once("../includes/functions.php");
     // fetch all id's of suppliers
-    $meal_ids = get_all_ids($con, "meals", "mealid");
+    $meal_ids = get_all_ids($con, "meals");
 
-    $item_ids = get_all_ids($con, "items", "itemid");
+    $item_ids = get_all_ids($con, "items");
 
     
 ?>

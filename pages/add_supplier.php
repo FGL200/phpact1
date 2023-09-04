@@ -45,7 +45,7 @@
             <select class="p-1 font-xs" id="referred_by" name="referred_by">
                 <option value="" selected>--SELECT--</option>
                 <?php while($row = $ids->fetch_assoc()): ?>
-                <option value="<?=$row['supplierid'];?>"><?=$row['supplierid'];?></option>
+                <option value="<?=$row['supplierid'];?>"><?=$row['company_name'];?></option>
                 <?php endwhile; ?>
             </select>
         </span>

@@ -4,7 +4,7 @@ function goHome(){
 
 function goTo(){
     const link = document.getElementById("goto").value;
-    window.location.href = link;
+    window.location.href = link + ".php";
 }
 
 const MAIN = {
