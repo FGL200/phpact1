@@ -6,7 +6,7 @@ function redirect($con, $query) {
     if ($con->multi_query($query)){
         header("Location: ..");
     }else{
-        echo "ERROR!: ".$query." <br> ".$con;
+        echo "ERROR!: ".$con->error()." <br> ".$con;
     }
 }
 

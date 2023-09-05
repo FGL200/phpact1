@@ -44,11 +44,11 @@
             <label class="font-xs" for="foodgroup">Food Group</label>
             <select class="p-1 font-xs" name="foodgroup" id="foodgroup">
                 <option value="None" selected disabled>--Select Food Group--</option>
-                <option value="Vegetables/Fruits">Vegetables/Fruits</option>
-                <option value="Grains">Grains</option>
-                <option value="Fat">Fats</option>
-                <option value="Protein">Protein</option>
-                <option value="Dairy">Dairy</option>
+                <option value="VF">Vegetables/Fruits</option>
+                <option value="G">Grains</option>
+                <option value="F">Fats</option>
+                <option value="P">Protein</option>
+                <option value="D">Dairy</option>
             </select>
             <!-- <input class="p-1 font-xs" type="text" name="foodgroup" id="foodgroup"> -->
         </span>
