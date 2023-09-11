@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
 
+    <!-- DATA TABLES -->
+    <link rel="stylesheet" href="../add/datatables/datatables.min.css">
+
     <!-- CUSTOM CSS -->
     <?php if(isset($css)) foreach($css as $c) {?>
     <link rel="stylesheet" href="<?="../css/$c";?>.css">
