@@ -8,7 +8,7 @@ async function getCols(e){
     })
     .then(response => response.json())
     .then(data => {
-        let options = "<option value='' selected diabled>--Select Column--</option>";
+        let options = "<option value='' selected diabled>--Show Columns--</option>";
         for(let i = 0; i < data.length; i++){
             options += "<option value='" + data[i] + "'>" + data[i] + "</option>";
         }
@@ -21,6 +21,11 @@ function appendCol(e){
 }
 
 async function runQuery(){
+    if($.fn.DataTable.isDataTable( '#dataTable' )){
+        $('#dataTable').DataTable().destroy();
+        $('#dataTable').html("");
+    }
+
     const form = new FormData();
     form.append("query", document.getElementById("query").value);
     await fetch("../php/runQuery.php", {
@@ -31,8 +36,12 @@ async function runQuery(){
     .then(loadTable)
     .catch(e=>{
         alert("ERROR IN YOUR QUERY!");
+        console.log(e);
     })
 
+    
+    // $('#dataTable').empty();
+    $("#dataTable").DataTable();
 }
 
 function loadTable(data){
@@ -43,7 +52,7 @@ function loadTable(data){
 
     newContent = "<thead><tr>";
     for(let i = 0; i < cols.length; i++){
-        newContent += "<th>" + cols[i].toUpperCase() + "</th>";
+        newContent += "<th>" + cols[i] + "</th>";
     }
     newContent += "</tr></thead>";
 
@@ -56,10 +65,5 @@ function loadTable(data){
         newContent += "</tr>";
     }
     newContent += "</tbody>";
-
-
     myTable.innerHTML = newContent;
-    $("#dataTable").DataTable({
-        
-    });
 }

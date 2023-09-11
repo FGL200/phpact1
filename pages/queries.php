@@ -44,7 +44,7 @@ includeHeader($header);
                 <section class="flex-r g-1 justify-c-space-between align-i-center"> 
                     <label for="table">Tables</label>
                     <select class="font-xs p-1" name="table" id="table" onchange="getCols(this)">
-                        <option value="">--Select Table--</option>
+                        <option value="">--Show Tables--</option>
                         <?php foreach($tbls as $tbl) { ?>
                             <option value="<?=$tbl;?>"><?=$tbl;?></option>
                         <?php }?>
@@ -53,7 +53,7 @@ includeHeader($header);
                 <section class="flex-r g-1 justify-c-space-between align-i-center"> 
                     <label for="columns">Columns</label>
                     <select class="font-xs p-1" name="columns" id="columns" onchange="appendCol(this)">
-                        <option value='' selected diabled>--Select Column--</option>
+                        <option value='' selected diabled>--Show Columns--</option>
                     </select>
                 </section>
             </div>
