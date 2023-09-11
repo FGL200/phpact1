@@ -38,10 +38,6 @@ async function runQuery(){
         alert("ERROR IN YOUR QUERY!");
         console.log(e);
     })
-
-    
-    // $('#dataTable').empty();
-    $("#dataTable").DataTable();
 }
 
 function loadTable(data){
@@ -66,4 +62,6 @@ function loadTable(data){
     }
     newContent += "</tbody>";
     myTable.innerHTML = newContent;
+
+    $("#dataTable").DataTable();
 }
