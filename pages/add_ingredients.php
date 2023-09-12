@@ -49,6 +49,7 @@
                 <option value="F">Fats</option>
                 <option value="P">Protein</option>
                 <option value="D">Dairy</option>
+                <option value="Milk">Milk</option>
             </select>
             <!-- <input class="p-1 font-xs" type="text" name="foodgroup" id="foodgroup"> -->
         </span>
