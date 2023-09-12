@@ -1,0 +1,276 @@
+use addbase_lab1;
+
+-- 1.
+SELECT 
+	`ing`.name 
+FROM 
+	ingredients `ing`
+INNER JOIN suppliers `supp`
+	ON `supp`.supplierid = `ing`.supplierid
+WHERE `supp`.supplierid = '00001';
+
+-- 2
+SELECT 
+	`ing`.name 
+FROM 
+	ingredients `ing`
+INNER JOIN suppliers `supp`
+	ON `supp`.supplierid = `ing`.supplierid
+WHERE `supp`.supplierid = '00001' OR `supp`.supplierid = '00002';
+
+-- 3
+SELECT 
+	`cmp`.company_name
+FROM 
+	suppliers `cmp`
+INNER JOIN ingredients `ing`
+	ON `ing`.supplierid = `cmp`.supplierid
+WHERE `ing`.inventory < 50;
+
+
+-- 4
+SELECT
+  AVG(unitprice) Average
+FROM ingredients
+WHERE supplierid = '00002'
+GROUP BY supplierid
+
+-- 5
+SELECT 
+	`supp`.company_name
+FROM suppliers `supp`
+WHERE `supp`.referred_by = '00001';
+
+-- 6
+SELECT 
+	name, 
+	inventory,
+    (
+		SELECT 
+			AVG(ing.inventory) * .25 `ave`
+		FROM ingredients ing
+	) `total`
+FROM ingredients 
+	WHERE inventory <= (
+    	SELECT 
+			AVG(ing.inventory) * .25 `ave`
+		FROM ingredients ing
+	) 
+
+-- 7 
+SELECT 
+  sup.company_name company
+FROM suppliers sup
+INNER JOIN ingredients ingr
+ON ingr.supplierid = sup.supplierid 
+WHERE ingr.foodgroup = 'milk' AND sup.referred_by = '00001'
+
+-- 8
+SELECT 
+	items.name,
+    items.price
+FROM 
+	madewith
+INNER JOIN items
+	ON items.itemid = madewith.itemid
+INNER JOIN ingredients
+	ON ingredients.ingredientid = madewith.ingredientid
+WHERE ingredients.supplierid = '00001';
+	
+-- 9
+use addbase_lab1;
+SELECT 
+	name,
+    inventory
+FROM ingredients 
+	WHERE inventory > (
+		SELECT
+			SUM(ing.inventory) `sum`
+		FROM ingredients ing
+		JOIN suppliers sp
+			ON sp.supplierid = ing.supplierid 
+		WHERE ing.supplierid = "00001"
+)
+    
+-- 10 
+use addbase_lab1;
+SELECT 
+	 sp.supplierid,
+	 ing.name,
+     ing.inventory
+FROM suppliers sp
+INNER JOIN ingredients ing
+	ON sp.supplierid = ing.supplierid
+WHERE sp.supplierid != "00001"
+ORDER BY sp.supplierid   
+
+-- 11
+
+SELECT 
+	`cmp`.company_name
+FROM suppliers `cmp`
+INNER JOIN  ingredients `ing`
+	ON `ing`.supplierid = `cmp`.supplierid
+GROUP BY `cmp`.supplierid
+HAVING MAX(`ing`.inventory) < 100;
+
+-- 12
+
+SELECT 
+	it.name,
+        it.price
+FROM items it
+INNER JOIN madewith md
+	ON md.itemid = it.itemid
+INNER JOIN ingredients ing
+	ON ing.ingredientid = md.ingredientid
+WHERE ing.supplierid = "00010";
+
+-- 13
+
+SELECT 
+	* 
+FROM items it
+	WHERE it.price > (
+		SELECT 
+			price 
+		FROM items 
+        WHERE items.name = 'Salad'
+    );
+
+-- 14
+SELECT
+	*
+FROM ingredients
+WHERE ingredients.supplierid = '00001' OR ingredients.supplierid = '00002';
+
+
+-- 15
+SELECT
+	*
+FROM ingredients
+WHERE ingredients.supplierid <> '00001' AND ingredients.supplierid <> '00002';
+
+
+
+
+
+
+
+
+
+
+-- 23
+SELECT 
+	count(*) `ingredient_provided`,
+	`cmp`.company_name
+FROM suppliers `cmp`
+INNER JOIN  ingredients `ing`
+	ON `ing`.supplierid = `cmp`.supplierid
+GROUP BY `cmp`.supplierid
+HAVING count(*) > (
+	SELECT 
+		count(*) `ingredient_provided`
+	FROM suppliers `cmp`
+	INNER JOIN  ingredients `ing`
+		ON `ing`.supplierid = `cmp`.supplierid
+	WHERE `cmp`.supplierid = "00001"
+	GROUP BY `cmp`.supplierid
+);
+
+
+-- 21
+SELECT * FROM suppliers WHERE referred_by IS NULL;
+
+
+-- 20 
+SELECT 
+	meals.name `name`
+FROM meals
+INNER JOIN partof part
+	ON part.mealid = meals.mealid
+INNER JOIN items
+	ON items.itemid = part.itemid
+INNER JOIN madewith made
+	ON made.itemid = items.itemid
+INNER JOIN ingredients ing
+	ON ing.ingredientid = made.ingredientid
+WHERE ing.foodgroup = 'Fat'
+GROUP BY meals.name;
+
+
+-- 18
+SELECT 
+	COUNT(*),
+    `it`.name
+FROM ingredients ing
+INNER JOIN madewith md 
+	ON md.ingredientid = ing.ingredientid
+INNER JOIN items it 
+	ON it.itemid = md.itemid
+GROUP BY it.name;
+
+
+-- 19
+
+SELECT 
+	count(*),
+    sp.company_name
+FROM suppliers sp
+WHERE sp.referred_by IS NOT NULL
+GROUP BY sp.referred_by
+HAVING count(*) > 1;
+
+
+-- 17
+SELECT 
+	it.name,
+	count(*)
+FROM
+	items it 
+INNER JOIN madewith md 
+	ON md.itemid = it.itemid
+INNER JOIN ingredients ing
+	ON ing.ingredientid = md.ingredientid
+GROUP BY it.name
+HAVING count(*) > 2;
+
+
+
+-- 16
+SELECT 
+	* 
+FROM items `it`
+WHERE price >= (
+	SELECT 
+		`it-1`.price
+	FROM items `it-1`
+	ORDER BY `it-1`.price DESC LIMIT 1
+);
+
+
+
+
+
+
+    
+    
+
+
+
+
+SELECT 
+	sp.supplierid,
+    sp.company_name,
+    count(*)
+FROM suppliers sp 
+GROUP BY sp.supplierid
+
+
+
+
+
+
+
+
+
