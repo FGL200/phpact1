@@ -1,0 +1,12 @@
+.menu-img {
+    width: 20%;
+    height: 30%;
+    border-radius: 50%;
+}
+
+tr {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}

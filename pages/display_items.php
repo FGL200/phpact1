@@ -14,7 +14,7 @@ $menu = get_menu($con);
 ?>
 
 <?php 
-    $header['css'] = ['main', 'index','display'];
+    $header['css'] = ['main', 'index','display', 'menu'];
     $header['title'] = 'Home';
     includeHeader($header);
 ?>
@@ -35,7 +35,7 @@ $menu = get_menu($con);
                     while($row = $menu->fetch_assoc()) {
                 ?>
                 <tr>
-                    <td class="text-l"><?= $row['name'];?></td>
+                    <td class="text-l item"><?= $row['name'];?></td>
                     <td class="text-r"><?= $row['price'];?></td>
                 </tr>
                 <?php } ?>
@@ -50,6 +50,6 @@ $menu = get_menu($con);
 </main>
 
 <?php 
-    $footer['js'] = ['main'];
+    $footer['js'] = ['main', 'fetchImages'];
     includeFooter($footer);
 ?>
