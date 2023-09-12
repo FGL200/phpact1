@@ -17,6 +17,16 @@
             </section>
             <section>
                 <p class="font-m">Laboratory Exercise 1 (Working With Subqueries)</p>  
+                <br>
+                <p class="font-b">Members : </p>
+                <ul>
+                    <li>Landicho</li>
+                    <li>Peñaranda</li>
+                    <li>Blurete</li>
+                    <li>Bianes</li>
+                    <li>Garamay</li>
+                </ul>
+                
             </section>
         </div>
         <div class="card m-3 p-3 shadow-l flex-c g-3">
