@@ -30,6 +30,7 @@
                 <option value="./add_ingredients">Add new Ingredient</option>
                 <option value="./add_items">Add new Item</option>
                 <option value="./add_meals">Add new Meal</option>
+                <option value="./queries">Query</option>
                 <!-- <option value="./add_menuItems">Add Menu Items</option> -->
                 <!-- <option value="./add_partOf">Add Part Of</option> -->
                 <!-- <option value="./add_madeWith">Add Made With</option> -->
