@@ -22,12 +22,12 @@
     <link rel="stylesheet" href="<?="../css/$c";?>.css">
     <?php }?>
 </head>
-<body class="flex-c" style="background-color: #FDF2E9;">
-<header class="text-c color-w p-1">
-    <a href="../" class="font-b flex-r align-i-center justify-c-center color-w text-n">
-        <p class="font-l">C</p>
-        <p class="font-s">RUD's</p>
+<body class="d-flex flex-column justify-content-between">
+<header class="text-center color-white p-1 d-flex justify-content-center">
+    <a href="../" class="fw-bold d-flex flex-row align-items-center color-white text-decoration-none">
+        <p class="fs-3">C</p>
+        <p class="fs-4">RUD's</p>
     </a>
 </header>
-<div class="flex-grow">
+<div class="flex-grow-1" id="root">
 <?php }?>

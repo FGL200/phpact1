@@ -14,35 +14,44 @@ async function getCols(e){
         }
         document.getElementById("columns").innerHTML = options;
     });
+
+
+    nQuery = "SELECT * FROM " + e.value;
+    document.getElementById("query").value = nQuery;
+    runQuery(nQuery);
 }
 
 function appendCol(e){
     const value = e.value;
 }
 
-async function runQuery(){
+async function runQuery(query){
     if($.fn.DataTable.isDataTable( '#dataTable' )){
         $('#dataTable').DataTable().destroy();
         $('#dataTable').html("");
     }
 
     const form = new FormData();
-    form.append("query", document.getElementById("query").value);
+    form.append("query", query);
     await fetch("../php/runQuery.php", {
         method : "POST",
         body : form
     })
     .then(response => response.json())
     .then(loadTable)
-    .catch(e=>{
-        alert("ERROR IN YOUR QUERY!");
-        console.log(e);
-    })
+    .catch(e => {
+        alert("Invalid query!");
+    });
 }
 
 function loadTable(data){
+    if(data== 0) {
+        alert("No Data Found");
+        return;
+    }
+
     const myTable = document.getElementById("dataTable");
-    const cols = Object.keys(data[0])
+    const cols = Object.keys(data[0]);
 
     let newContent = "";
 

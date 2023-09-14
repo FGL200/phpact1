@@ -10,7 +10,8 @@ function addMeal(e){
     e.children[0].selected = true;
 
     const meal = document.createElement('p');
-    meal.setAttribute("class", "card meal-item p-1 font-xs flex-r align-i-center g-1");
+    meal.setAttribute("class", "form-control meal-ingredient fs-6 d-flex align-items-center gap-2");
+    meal.setAttribute("style", "padding: .25rem 1rem;")
     meal.setAttribute("data-id", id);
     meal.innerHTML = name;
 
@@ -20,21 +21,20 @@ function addMeal(e){
     meal_input.value = id;
 
     const close = document.createElement("button");
-    close.setAttribute("class", "btn flex-r font-xs justify-c-center align-c-center");
+    close.setAttribute("class", "btn d-flex fs-6 justify-content-center align-self-center");
     close.setAttribute("style", "padding: 0; width: 20px; height: 20px; border-radius: 50%; border: none; font-size: 10px;")
-    close.innerHTML = '_';
+    close.innerHTML = '<b>x</b>';
     close.addEventListener("click", function() {
         meal.remove();
     });
 
     const quantity = document.createElement("input");
-    quantity.setAttribute("class", "font-xs");
-    quantity.setAttribute("style", "border: none; outline: none; border-left: 1px solid rgba(0,0,0,0.2); padding-left: .5rem; background: rgba(0,0,0,0.1);");
+    quantity.setAttribute("class", "fs-6 text-center");
+    quantity.setAttribute("style", "max-width: 50px; outline: none;");
     quantity.setAttribute("type", "number");
     quantity.setAttribute("name", "quantity_" + id)
     quantity.setAttribute("value", "1");
     quantity.setAttribute("min", "0");
-    quantity.setAttribute("max", "10");
 
     meal.append(meal_input);
     meal.appendChild(quantity);

@@ -9,44 +9,44 @@
     includeHeader($header);
 ?>
 
-<main class="flex-c flex-grow justify-c-center align-i-center">
-    <div class="flex-r align-i-center justify-c-center g-5 flex-wrap">
-        <div class="flex-c">
+<main class="d-flex flex-column flex-grow justify-content-center align-items-center">
+    <div class="d-flex align-items-center justify-content-center gap-5 flex-wrap">
+        <div class="card d-flex flex-column p-3 m-1 fade-in-to-right">
             <section>
-                <h1 class="font-xl">Activity No. 1</h1>
+                <h1 class="fs-3">Activity No. 1</h1>
+                <hr style="margin: .5rem 0;">
             </section>
-            <section>
-                <p class="font-m">Laboratory Exercise 1 (Working With Subqueries)</p>  
-                <br>
-                <p class="font-b">Members : </p>
-                <ul>
-                    <li>Landicho</li>
-                    <li>Peñaranda</li>
-                    <li>Blurete</li>
-                    <li>Bianes</li>
-                    <li>Garamay</li>
-                </ul>
-                
+            <section class="d-flex flex-column align-items-center">
+                <p class="fs-6 fw-bold">Laboratory Exercise 1 (Working With Subqueries)</p>
+                <!-- <hr class="align-self-stretch m-2"> -->
+                <span class="p-1 m-3">
+                    <p class="fw-bold text-center m-2">Members:</p>
+                    <p class="text-center">Landicho</p>
+                    <p class="text-center">Peñaranda</p>
+                    <p class="text-center">Blurete</p>
+                    <p class="text-center">Bianes</p>
+                    <p class="text-center">Garamay</p>
+                </span>
             </section>
         </div>
-        <div class="card m-3 p-3 shadow-l flex-c g-3">
+        <div class="card m-3 p-3 shadow-l d-flex flex-column gap-3 fade-in-to-left">
             <label for="goto">
-                <b class="font-s">Let's get started!</b>
-                <p class="font-xs">Choose an action below to proceed</p>
+                <b class="fs-5">Let's get started!</b>
+                <p class="fs-6">Choose an action below to proceed</p>
             </label>
-            <select class="font-xs p-1" id="goto">
-                <option value="./display_items" selected>Display Menu</option>
+            <select class="fs-6 form-control" id="goto">
                 <option value="./add_supplier">Add a Supplier</option>
                 <option value="./add_ingredients">Add new Ingredient</option>
                 <option value="./add_items">Add new Item</option>
                 <option value="./add_meals">Add new Meal</option>
-                <option value="./queries">Query</option>
+                <option value="./display_items">Display Menu</option>
+                <option value="./queries">Construct Query</option>
                 <!-- <option value="./add_menuItems">Add Menu Items</option> -->
                 <!-- <option value="./add_partOf">Add Part Of</option> -->
                 <!-- <option value="./add_madeWith">Add Made With</option> -->
             </select>
-            <span class="flex-rr justify-c-center ">
-                <button id="id-btn-go" class="btn btn-yellow font-xs" type="button" onclick="goTo()" style="width: 50%;">
+            <span class="d-flex flex-row-reverse justify-content-center ">
+                <button id="id-btn-go" class="btn btn-yellow fs-6" type="button" onclick="goTo()" style="width: 50%;">
                     Go
                 </button>
             </span>

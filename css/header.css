@@ -2,3 +2,18 @@ header{
     background-color: #E74C3C;
     border-bottom: 2px solid #F39C12;
 }
+
+body {
+    height: 100vh;
+}
+
+main {
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #FAD7A0;
+    background-image: url(../img/icon.png);
+    background-position: center;
+    background-size:contain;
+    background-repeat: no-repeat ;
+}

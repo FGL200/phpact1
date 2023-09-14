@@ -12,44 +12,39 @@
 
 <?php 
     $header['css'] = ['main', 'index'];
-    $header['title'] = 'Home';
+    $header['title'] = 'Item';
     includeHeader($header);
 ?>
 
-<main class="flex-c flex-grow justify-c-center align-i-center">
-    <form action="../php/add_items.php" method="POST" id="add-supplier" class="card p-3 shadow-m flex-c g-1" style="max-width: 380px;">
-        <span class="flex-r justify-c-space-between g-3">
-            <b class="font-l">New Item</b>
+<main class="d-flex flex-column flex-grow justify-content-center align-items-center">
+    <form action="../php/add_items.php" method="POST" id="add-supplier"  class="card p-3 shadow-m d-flex flex-column gap-1 fade-in-to-bottom">
+        <span class="d-flex flex-column gap-1">
+            <b class="fs-5" style="margin: .5rem 0;">New Item</b>
         </span>
-        <!-- <span class="flex-r justify-c-space-between g-3">
-            <label class="font-xs" for="id">ID</label>
-        </span> -->
+        <hr>
         <input type="hidden" name="id" id="id" value="<?= 'i-'.str_pad($current_added_id ? explode('i-', $current_added_id[0])[1] + 1 : 1, 3, '0', STR_PAD_LEFT) ;?>"  readonly>
-        <span class="flex-r justify-c-space-between g-3">
-            <label class="font-xs" for="name">Item's Name</label>
-            <input class="p-1 font-xs" type="text" name="name" id="name">
+        <span class="d-flex flex-column gap-1">
+            <label class="fs-6" for="name">Item's Name</label>
+            <input class="form-control" type="text" name="name" id="name" required>
         </span>
-        <span class="flex-r justify-c-space-between g-3">
-            <label class="font-xs" for="price">Price</label>
-            <input class="p-1 font-xs" type="text" name="price" id="price">
+        <span class="d-flex flex-column gap-1">
+            <label class="fs-6" for="price">Price</label>
+            <input class="form-control" type="text" name="price" id="price" required>
         </span>
-        <span class="flex-r justify-c-space-between g-3">
-            <label class="font-xs" for="date_added">Date Added</label>
-            <input class="p-1 font-xs" type="date" name="date_added" id="date_added">
+        <span class="d-flex flex-column gap-1">
+            <label class="fs-6" for="date_added">Date Added</label>
+            <input class="form-control" type="date" name="date_added" id="date_added" required>
         </span>
-        <span id="items-holder" class="flex-r p-1 flex-wrap g-1">
+        <span id="items-holder" class="d-flex p-1 flex-wrap gap-1">
             
         </span>
-        <select onchange="addItem(this)" id="id-item-list" class="p-1 font-xs">
+        <select onchange="addItem(this)" id="id-item-list" class="form-control">
             <option value="" selected disabled>--Select Ingredient--</option>
             <?php get_all_ingredients_or_items($con, 'ingredients', 'ingredientid') ?>
-            
-            <!-- YUNG VALUE NG KADA OPTION AY ITEM galing sa database -->
-            <!-- structure ng value ('id_IngredientName') OR ('$id' + '_' + '$ingredient')-->
         </select>
-        <span class="flex-rr justify-c-space-between g-3">
-            <button class="btn btn-green font-xs" type="submit">Add</button>
-            <button class="btn font-xs" type="button" onclick="goHome()" >Back</button>
+        <span class="d-flex flex-row-reverse justify-content-between gap-3">
+            <button class="btn btn-green fs-6" type="submit">Add</button>
+            <button class="btn fs-6" type="button" onclick="goHome()" >Back</button>
         </span>
     </form>
 </main>

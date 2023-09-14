@@ -57,7 +57,8 @@ CREATE TABLE `partof`(
 CREATE TABLE `menuitems`(
 	`menuitemid` CHAR(5) NOT NULL,
     `name` VARCHAR(30) NOT NULL,
-    `price` DECIMAL(5,2) NOT NULL
+    `price` DECIMAL(5,2) NOT NULL,
+    FOREIGN KEY (`menuitemid`) REFERENCES `meals`(`mealid`)
 );
 
 

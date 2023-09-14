@@ -1,9 +1,9 @@
 
 <?php function includeFooter($data = []) { extract($data) ?>
-<footer class="text-c color-w p-1 font-xs">
-    An activity accomplished by the group CRUD and submitted to Mr. Noel Gutierez
-</footer>
 </div>
+<footer class="text-center color-white p-1 fs-6">
+    An activity accomplished by the group CRUD and submitted to Mr. Noel Gutierrez
+</footer>
 <!-- JQUERY -->
 <script src="../add/jquery/jquery.min.js"></script>
 
