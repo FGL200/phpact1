@@ -14,7 +14,6 @@ async function fetchItemImage(item, index) {
         img.src = data.hits[0].recipe.image
         img.classList.add("menu-img")
         document.getElementById("item-img-" + index).appendChild(img);
-        console.log(img)
         // item.before(img)
     })
 }

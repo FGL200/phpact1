@@ -1,6 +1,12 @@
 async function getCols(e){
     const form = new FormData();
-    form.append('table', e.value);
+    const table = e.value
+    form.append('table', table);
+
+    for(let i = 0; i < e.children.lenth; i ++){
+        e.children[i].selected = false;
+    }
+    e.children[0].selected = true;
 
     await fetch("../php/getColumns.php", {
         method : "POST",
@@ -16,7 +22,7 @@ async function getCols(e){
     });
 
 
-    nQuery = "SELECT * FROM " + e.value;
+    nQuery = "SELECT * FROM " + table;
     document.getElementById("query").value = nQuery;
     runQuery(nQuery);
 }
@@ -45,8 +51,8 @@ async function runQuery(query){
 }
 
 function loadTable(data){
-    if(data== 0) {
-        alert("No Data Found");
+    if(data.length == 0) {
+        alert("Query is successful!");
         return;
     }
 

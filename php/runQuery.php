@@ -1,7 +1,7 @@
 <?php
 require_once "config.php";
 
-function toAssocArr(mysqli_result $RESULT){
+function toAssocArr($RESULT){
     $ret = [];
     if(gettype($RESULT) === gettype(true)) return [];
 
